@@ -15,7 +15,12 @@ SQS/SNS/EventBridge, Lambda, CloudWatch, IAM, KMS, Secrets Manager).
 docker compose up -d
 
 # 2. Configure AWS CLI to point at it
-aws configure --profile floci   # dummy creds, region us-east-1
+aws configure --profile floci   # dummy creds , region us-east-1
+
+# AWS Access Key ID: test (or any dummy value)
+# AWS Secret Access Key: test (or any dummy value)
+# Default region: us-east-1
+# Default output format: json (optional)
 
 cat >> ~/.aws/config << 'EOF'
 
