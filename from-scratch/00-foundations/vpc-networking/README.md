@@ -5,16 +5,17 @@
 - Public vs private subnet : one can access or be accessible by the internet whiel the other stays isolated. Public has access to IGW
 - IGW : internet gateway in a VPC is taht connects the vpc components to the internet
 - NAT : network address translation is used inside a private subnet which cant access internet but in case it does, like to upgrade its version then it can do just that with restrictions and does not allow incoming traffic from the internet
+NAT Gateway helps private subnets access the internet, BUT it itself must be in a PUBLIC subnet.
 - AZ : availability zone is in a region, can be many, for disaster recovery, like datacentres across us-east-1
 
 ## Provisioning
 1 VPC (10.0.0.0/16)
 2 public subnets (one in each AZ)
-10.0.1.0/24 in us-east-1a
-10.0.2.0/24 in us-east-1b
+    10.0.1.0/24 in us-east-1a
+    10.0.2.0/24 in us-east-1b
 2 private subnets (one in each AZ)
-10.0.10.0/24 in us-east-1a
-10.0.11.0/24 in us-east-1b
+    10.0.10.0/24 in us-east-1a
+    10.0.11.0/24 in us-east-1b
 1 Internet Gateway attached to VPC
 Route table for public subnets: route 0.0.0.0/0 → IGW
 Route table for private subnets: route 0.0.0.0/0 → NAT Gateway (in a public subnet)
